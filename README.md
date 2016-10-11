@@ -36,4 +36,6 @@ source /etc/profile
 go install github.com/E-Xor/hello # path after go-tutorials/src
 $GOPATH/bin/hello
 
+# For lib, not executable
+go build github.com/E-Xor/stringutil
 ```
