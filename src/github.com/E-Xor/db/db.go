@@ -4,9 +4,12 @@ import (
     _ "github.com/go-sql-driver/mysql"
     "database/sql"
     "fmt"
+    "time"
 )
 
 func main() {
+
+  start := time.Now()
 
   fmt.Println("sql.Open: " + "maksim:passwd@(mysql_host:3306)/hubyak_dev?charset=utf8")
 
@@ -29,6 +32,10 @@ func main() {
   }
 
   db.Close()
+
+  diff := time.Now().Sub(start)
+  fmt.Println(diff) // 22-76ms in Go, 8-21ms in rake :-)
+
 }
 
 func checkErr(err error) {
